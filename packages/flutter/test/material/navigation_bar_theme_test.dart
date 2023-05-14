@@ -5,6 +5,10 @@
 // This file is run as part of a reduced test set in CI on Mac and Windows
 // machines.
 @Tags(<String>['reduced-test-set'])
+<<<<<<< HEAD
+=======
+library;
+>>>>>>> 84a1e904f44f9b0e9c4510138010edcc653163f8
 
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
@@ -15,6 +19,12 @@ void main() {
   test('copyWith, ==, hashCode basics', () {
     expect(const NavigationBarThemeData(), const NavigationBarThemeData().copyWith());
     expect(const NavigationBarThemeData().hashCode, const NavigationBarThemeData().copyWith().hashCode);
+  });
+
+  test('NavigationBarThemeData lerp special cases', () {
+    expect(NavigationBarThemeData.lerp(null, null, 0), null);
+    const NavigationBarThemeData data = NavigationBarThemeData();
+    expect(identical(NavigationBarThemeData.lerp(data, data, 0.5), data), true);
   });
 
   testWidgets('Default debugFillProperties', (WidgetTester tester) async {
