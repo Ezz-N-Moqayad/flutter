@@ -15,6 +15,11 @@ import 'material.dart';
 import 'material_localizations.dart';
 
 const double _kToolbarHeight = 44.0;
+<<<<<<< HEAD
+
+// Padding between the toolbar and the anchor.
+=======
+>>>>>>> 84a1e904f44f9b0e9c4510138010edcc653163f8
 const double _kToolbarContentDistance = 8.0;
 
 /// A fully-functional Material-style text selection toolbar.
@@ -77,11 +82,14 @@ class TextSelectionToolbar extends StatelessWidget {
   final ToolbarBuilder toolbarBuilder;
 
   /// The size of the text selection handles.
+<<<<<<< HEAD
+=======
   ///
   /// See also:
   ///
   ///  * [SpellCheckSuggestionsToolbar], which references this value to calculate
   ///    the padding between the toolbar and anchor.
+>>>>>>> 84a1e904f44f9b0e9c4510138010edcc653163f8
   static const double kHandleSize = 22.0;
 
   /// Padding between the toolbar and the anchor.
@@ -103,7 +111,11 @@ class TextSelectionToolbar extends StatelessWidget {
         anchorBelow + const Offset(0.0, kToolbarContentDistanceBelow);
 
     const double screenPadding = CupertinoTextSelectionToolbar.kToolbarScreenPadding;
+<<<<<<< HEAD
+    final double paddingAbove = MediaQuery.of(context).padding.top
+=======
     final double paddingAbove = MediaQuery.paddingOf(context).top
+>>>>>>> 84a1e904f44f9b0e9c4510138010edcc653163f8
         + screenPadding;
     final double availableHeight = anchorAbovePadded.dy - _kToolbarContentDistance - paddingAbove;
     final bool fitsAbove = _kToolbarHeight <= availableHeight;

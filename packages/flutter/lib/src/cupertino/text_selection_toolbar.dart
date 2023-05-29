@@ -125,8 +125,11 @@ class CupertinoTextSelectionToolbar extends StatelessWidget {
   ///
   /// See also:
   ///
+<<<<<<< HEAD
+=======
   ///  * [SpellCheckSuggestionsToolbar], which uses this same value for its
   ///    padding from the edges of the viewport.
+>>>>>>> 84a1e904f44f9b0e9c4510138010edcc653163f8
   ///  * [TextSelectionToolbar], which uses this same value as well.
   static const double kToolbarScreenPadding = 8.0;
 
@@ -170,7 +173,11 @@ class CupertinoTextSelectionToolbar extends StatelessWidget {
     assert(debugCheckHasMediaQuery(context));
     final EdgeInsets mediaQueryPadding = MediaQuery.paddingOf(context);
 
+<<<<<<< HEAD
+    final double paddingAbove = mediaQuery.padding.top + kToolbarScreenPadding;
+=======
     final double paddingAbove = mediaQueryPadding.top + kToolbarScreenPadding;
+>>>>>>> 84a1e904f44f9b0e9c4510138010edcc653163f8
     final double toolbarHeightNeeded = paddingAbove
         + _kToolbarContentDistance
         + _kToolbarHeight;

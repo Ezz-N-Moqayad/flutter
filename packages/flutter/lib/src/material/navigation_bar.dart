@@ -471,22 +471,37 @@ class _NavigationDestinationBuilderState extends State<_NavigationDestinationBui
     final _NavigationDestinationInfo info = _NavigationDestinationInfo.of(context);
     final NavigationBarThemeData navigationBarTheme = NavigationBarTheme.of(context);
     final NavigationBarThemeData defaults = _defaultsFor(context);
+    final GlobalKey labelKey = GlobalKey();
 
+    final bool selected = info.selectedIndex == info.index;
     return _NavigationBarDestinationSemantics(
       child: _NavigationBarDestinationTooltip(
         message: widget.tooltip ?? widget.label,
         child: _IndicatorInkWell(
+<<<<<<< HEAD
+          key: UniqueKey(),
+          labelKey: labelKey,
+          labelBehavior: info.labelBehavior,
+          selected: selected,
+=======
           iconKey: iconKey,
           labelBehavior: info.labelBehavior,
+>>>>>>> 84a1e904f44f9b0e9c4510138010edcc653163f8
           customBorder: navigationBarTheme.indicatorShape ?? defaults.indicatorShape,
           onTap: info.onTap,
           child: Row(
             children: <Widget>[
               Expanded(
                 child: _NavigationBarDestinationLayout(
+<<<<<<< HEAD
+                  icon: buildIcon(context),
+                  labelKey: labelKey,
+                  label: buildLabel(context),
+=======
                   icon: widget.buildIcon(context),
                   iconKey: iconKey,
                   label: widget.buildLabel(context),
+>>>>>>> 84a1e904f44f9b0e9c4510138010edcc653163f8
                 ),
               ),
             ],
@@ -499,8 +514,15 @@ class _NavigationDestinationBuilderState extends State<_NavigationDestinationBui
 
 class _IndicatorInkWell extends InkResponse {
   const _IndicatorInkWell({
+<<<<<<< HEAD
+    super.key,
+    required this.labelKey,
+    required this.labelBehavior,
+    required this.selected,
+=======
     required this.iconKey,
     required this.labelBehavior,
+>>>>>>> 84a1e904f44f9b0e9c4510138010edcc653163f8
     super.customBorder,
     super.onTap,
     super.child,
@@ -509,6 +531,37 @@ class _IndicatorInkWell extends InkResponse {
     highlightColor: Colors.transparent,
   );
 
+<<<<<<< HEAD
+  final GlobalKey labelKey;
+  final NavigationDestinationLabelBehavior labelBehavior;
+  final bool selected;
+
+  @override
+  RectCallback? getRectCallback(RenderBox referenceBox) {
+    final RenderBox labelBox = labelKey.currentContext!.findRenderObject()! as RenderBox;
+    final Rect labelRect = labelBox.localToGlobal(Offset.zero) & labelBox.size;
+    final double labelPadding;
+    switch (labelBehavior) {
+      case NavigationDestinationLabelBehavior.alwaysShow:
+        labelPadding = labelRect.height / 2;
+        break;
+      case NavigationDestinationLabelBehavior.onlyShowSelected:
+        labelPadding = selected ? labelRect.height / 2 : 0;
+        break;
+      case NavigationDestinationLabelBehavior.alwaysHide:
+        labelPadding = 0;
+        break;
+    }
+    final double indicatorOffsetX = referenceBox.size.width / 2;
+    final double indicatorOffsetY = referenceBox.size.height / 2 - labelPadding;
+
+    return () {
+      return Rect.fromCenter(
+        center: Offset(indicatorOffsetX, indicatorOffsetY),
+        width: _kIndicatorWidth,
+        height: _kIndicatorHeight,
+      );
+=======
   final GlobalKey iconKey;
   final NavigationDestinationLabelBehavior labelBehavior;
 
@@ -518,6 +571,7 @@ class _IndicatorInkWell extends InkResponse {
       final RenderBox iconBox = iconKey.currentContext!.findRenderObject()! as RenderBox;
       final Rect iconRect = iconBox.localToGlobal(Offset.zero) & iconBox.size;
       return referenceBox.globalToLocal(iconRect.topLeft) & iconBox.size;
+>>>>>>> 84a1e904f44f9b0e9c4510138010edcc653163f8
     };
   }
 }
@@ -578,7 +632,11 @@ class _NavigationDestinationInfo extends InheritedWidget {
   /// when label behavior is [NavigationDestinationLabelBehavior.onlyShowSelected].
   final int selectedIndex;
 
+<<<<<<< HEAD
+  /// How many total destinations are are in this navigation bar.
+=======
   /// How many total destinations are in this navigation bar.
+>>>>>>> 84a1e904f44f9b0e9c4510138010edcc653163f8
   ///
   /// This is required for semantics, so that each destination can have a label
   /// "Tab 1 of 4", for example.
@@ -758,7 +816,11 @@ class _NavigationBarDestinationLayout extends StatelessWidget {
   /// 3 [NavigationBar].
   const _NavigationBarDestinationLayout({
     required this.icon,
+<<<<<<< HEAD
+    required this.labelKey,
+=======
     required this.iconKey,
+>>>>>>> 84a1e904f44f9b0e9c4510138010edcc653163f8
     required this.label,
   });
 
@@ -767,10 +829,17 @@ class _NavigationBarDestinationLayout extends StatelessWidget {
   /// See [NavigationDestination.icon].
   final Widget icon;
 
+<<<<<<< HEAD
+  /// The global key for the label of this destination.
+  ///
+  /// This is used to determine the position of the label relative to the icon.
+  final GlobalKey labelKey;
+=======
   /// The global key for the icon of this destination.
   ///
   /// This is used to determine the position of the icon.
   final GlobalKey iconKey;
+>>>>>>> 84a1e904f44f9b0e9c4510138010edcc653163f8
 
   /// The label widget that sits below the icon.
   ///
@@ -780,7 +849,11 @@ class _NavigationBarDestinationLayout extends StatelessWidget {
   /// See [NavigationDestination.label].
   final Widget label;
 
+<<<<<<< HEAD
+  static final Key _iconKey = UniqueKey();
+=======
   static final Key _labelKey = UniqueKey();
+>>>>>>> 84a1e904f44f9b0e9c4510138010edcc653163f8
 
   @override
   Widget build(BuildContext context) {
@@ -804,7 +877,7 @@ class _NavigationBarDestinationLayout extends StatelessWidget {
                 alwaysIncludeSemantics: true,
                 opacity: animation,
                 child: RepaintBoundary(
-                  key: _labelKey,
+                  key: labelKey,
                   child: label,
                 ),
               ),

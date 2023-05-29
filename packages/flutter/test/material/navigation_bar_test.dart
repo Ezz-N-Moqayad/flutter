@@ -5,9 +5,12 @@
 // This file is run as part of a reduced test set in CI on Mac and Windows
 // machines.
 @Tags(<String>['reduced-test-set'])
+<<<<<<< HEAD
+=======
 library;
 
 import 'dart:math';
+>>>>>>> 84a1e904f44f9b0e9c4510138010edcc653163f8
 
 import 'package:flutter/foundation.dart';
 import 'package:flutter/gestures.dart';
@@ -873,6 +876,8 @@ void main() {
     expect(transform.getColumn(0)[0], 1.0);
   });
 
+<<<<<<< HEAD
+=======
   testWidgets('Navigation destination updates indicator color and shape', (WidgetTester tester) async {
     final ThemeData theme = ThemeData(useMaterial3: true);
     const Color color = Color(0xff0000ff);
@@ -914,10 +919,13 @@ void main() {
     expect(_getIndicatorDecoration(tester)?.shape, shape);
   });
 
+>>>>>>> 84a1e904f44f9b0e9c4510138010edcc653163f8
   group('Material 2', () {
     // Tests that are only relevant for Material 2. Once ThemeData.useMaterial3
     // is turned on by default, these tests can be removed.
 
+<<<<<<< HEAD
+=======
     testWidgets('Navigation destination updates indicator color and shape', (WidgetTester tester) async {
       final ThemeData theme = ThemeData(useMaterial3: false);
       const Color color = Color(0xff0000ff);
@@ -962,6 +970,7 @@ void main() {
       expect(_getIndicatorDecoration(tester)?.shape, shape);
     });
 
+>>>>>>> 84a1e904f44f9b0e9c4510138010edcc653163f8
     testWidgets('Navigation indicator renders ripple', (WidgetTester tester) async {
       // This is a regression test for https://github.com/flutter/flutter/issues/116751.
       int selectedIndex = 0;
@@ -1219,6 +1228,8 @@ void main() {
 
       await expectLater(find.byType(NavigationBar), matchesGoldenFile('indicator_onlyShowSelected_unselected_m2.png'));
     });
+<<<<<<< HEAD
+=======
 
     testWidgets('Destination icon does not rebuild when tapped', (WidgetTester tester) async {
       // This is a regression test for https://github.com/flutter/flutter/issues/122811.
@@ -1265,6 +1276,7 @@ void main() {
       icon = tester.widget<Icon>(find.byType(Icon).last);
       expect(icon.color, initialColor);
     });
+>>>>>>> 84a1e904f44f9b0e9c4510138010edcc653163f8
   });
 }
 

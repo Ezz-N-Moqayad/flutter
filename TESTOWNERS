@@ -318,8 +318,12 @@
 # tool_integration_tests @zanderso @flutter/tool
 # tool_tests @zanderso @flutter/tool
 # verify_binaries_codesigned @christopherfujino @flutter/releases
+<<<<<<< HEAD
+# flutter_packaging @godofredoc @flutter/infra
+=======
 # web_canvaskit_tests @yjbanov @flutter/web
 # web_integration_tests @yjbanov @flutter/web
 # web_long_running_tests @yjbanov @flutter/web
 # web_tests @yjbanov @flutter/web
 # web_tool_tests @zanderso @flutter/tool
+>>>>>>> 84a1e904f44f9b0e9c4510138010edcc653163f8

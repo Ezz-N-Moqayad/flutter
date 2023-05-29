@@ -308,10 +308,20 @@ class Parser {
           switch(tokenStr) {
             case 'plural':
               matchedType = ST.plural;
+<<<<<<< HEAD
+              break;
+            case 'select':
+              matchedType = ST.select;
+              break;
+            case 'other':
+              matchedType = ST.other;
+              break;
+=======
             case 'select':
               matchedType = ST.select;
             case 'other':
               matchedType = ST.other;
+>>>>>>> 84a1e904f44f9b0e9c4510138010edcc653163f8
           }
           tokens.add(Node(matchedType!, startIndex, value: match.group(0)));
           startIndex = match.end;

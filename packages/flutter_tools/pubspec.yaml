@@ -10,10 +10,17 @@ dependencies:
   archive: 3.3.2
   args: 2.4.0
   browser_launcher: 1.1.1
+<<<<<<< HEAD
+  dds: 2.5.0
+  dwds: 16.0.2+1
+  completion: 1.0.0
+  coverage: 1.6.1
+=======
   dds: 2.7.10
   dwds: 19.0.0
   completion: 1.0.1
   coverage: 1.6.3
+>>>>>>> 84a1e904f44f9b0e9c4510138010edcc653163f8
   crypto: 3.0.2
   file: 6.1.4
   flutter_template_images: 4.2.0
@@ -105,4 +112,8 @@ dartdoc:
   # Exclude this package from the hosted API docs.
   nodoc: true
 
+<<<<<<< HEAD
+# PUBSPEC CHECKSUM: d549
+=======
 # PUBSPEC CHECKSUM: 473c
+>>>>>>> 84a1e904f44f9b0e9c4510138010edcc653163f8

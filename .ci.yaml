@@ -1449,6 +1449,10 @@ targets:
 
   - name: Linux_android android_defines_test
     recipe: devicelab/devicelab_drone
+<<<<<<< HEAD
+    # bringup: true
+=======
+>>>>>>> 84a1e904f44f9b0e9c4510138010edcc653163f8
     presubmit: true
     timeout: 60
     dimensions: {
@@ -3320,7 +3324,10 @@ targets:
     enabled_branches:
       - flutter-\d+\.\d+-candidate\.\d+
     recipe: flutter/flutter
+<<<<<<< HEAD
+=======
     presubmit: false
+>>>>>>> 84a1e904f44f9b0e9c4510138010edcc653163f8
     timeout: 60
     properties:
       dependencies: >-
@@ -4076,6 +4083,8 @@ targets:
         ["devicelab", "ios", "mac"]
       task_name: flutter_gallery__transition_perf_e2e_impeller_ios
 
+<<<<<<< HEAD
+=======
   - name: Mac_ios animated_blur_backdrop_filter_perf_ios__timeline_summary
     recipe: devicelab/devicelab_drone
     presubmit: false
@@ -4086,6 +4095,7 @@ targets:
         ["devicelab", "ios", "mac"]
       task_name: animated_blur_backdrop_filter_perf_ios__timeline_summary
 
+>>>>>>> 84a1e904f44f9b0e9c4510138010edcc653163f8
   - name: Mac_ios spell_check_test
     recipe: devicelab/devicelab_drone
     presubmit: false
@@ -4987,6 +4997,10 @@ targets:
     enabled_branches:
       - beta
       - stable
+<<<<<<< HEAD
+      - main
+=======
+>>>>>>> 84a1e904f44f9b0e9c4510138010edcc653163f8
     properties:
       task_name: flutter_packaging
       tags: >
@@ -5002,16 +5016,27 @@ targets:
     enabled_branches:
       - beta
       - stable
+<<<<<<< HEAD
+      - main
+=======
+>>>>>>> 84a1e904f44f9b0e9c4510138010edcc653163f8
     properties:
       task_name: flutter_packaging
       tags: >
         ["framework", "hostonly", "shard", "mac"]
     dimensions:
       cpu: "x86"
+<<<<<<< HEAD
     drone_dimensions:
       - os=Mac
       - cpu=x86
+=======
 
+<<<<<<< HEAD
+=======
+>>>>>>> 9a5e6df9ffae4d7e998860198e56575f0016f131
+
+>>>>>>> 84a1e904f44f9b0e9c4510138010edcc653163f8
   - name: Mac_arm64 flutter_packaging
     recipe: packaging/packaging
     timeout: 60
@@ -5020,6 +5045,10 @@ targets:
     enabled_branches:
       - beta
       - stable
+<<<<<<< HEAD
+      - main
+=======
+>>>>>>> 84a1e904f44f9b0e9c4510138010edcc653163f8
     properties:
       task_name: flutter_packaging
       tags: >
@@ -5038,6 +5067,10 @@ targets:
     enabled_branches:
       - beta
       - stable
+<<<<<<< HEAD
+      - main
+=======
+>>>>>>> 84a1e904f44f9b0e9c4510138010edcc653163f8
     properties:
       task_name: flutter_packaging
       tags: >
@@ -5051,6 +5084,10 @@ targets:
     bringup: true
     enabled_branches:
       - beta
+<<<<<<< HEAD
+      - main
+=======
+>>>>>>> 84a1e904f44f9b0e9c4510138010edcc653163f8
     presubmit: false
     timeout: 60
     properties:

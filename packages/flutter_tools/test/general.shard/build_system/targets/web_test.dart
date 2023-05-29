@@ -900,6 +900,12 @@ void main() {
       contains('"main.dart.js"'));
   }));
 
+<<<<<<< HEAD
+  test('flutter.js sanity checks', () {
+    final String flutterJsContents = flutter_js.generateFlutterJsFile();
+    expect(flutterJsContents, contains('"use strict";'));
+    expect(flutterJsContents, contains('main.dart.js'));
+=======
   test('flutter.js sanity checks', () => testbed.run(() {
     final String fileGeneratorsPath = environment.artifacts
         .getArtifactPath(Artifact.flutterToolsFileGenerators);
@@ -909,13 +915,18 @@ void main() {
     expect(flutterJsContents, contains('main.dart.js'));
     expect(flutterJsContents, contains('if (!("serviceWorker" in navigator))'));
     expect(flutterJsContents, contains(r'/\.js$/,'));
+>>>>>>> 84a1e904f44f9b0e9c4510138010edcc653163f8
     expect(flutterJsContents, contains('flutter_service_worker.js?v='));
     expect(flutterJsContents, contains('document.createElement("script")'));
     expect(flutterJsContents, contains('"application/javascript"'));
     expect(flutterJsContents, contains('const baseUri = '));
     expect(flutterJsContents, contains('document.querySelector("base")'));
     expect(flutterJsContents, contains('.getAttribute("href")'));
+<<<<<<< HEAD
+  });
+=======
   }));
+>>>>>>> 84a1e904f44f9b0e9c4510138010edcc653163f8
 
   test('flutter.js is not dynamically generated', () => testbed.run(() async {
     globals.fs.file('bin/cache/flutter_web_sdk/canvaskit/foo')

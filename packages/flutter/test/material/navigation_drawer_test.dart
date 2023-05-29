@@ -154,7 +154,11 @@ void main() {
 
   testWidgets('Navigation drawer is scrollable', (WidgetTester tester) async {
     final GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
+<<<<<<< HEAD
+    widgetSetup(tester, 500, windowHeight: 300);
+=======
     widgetSetup(tester, 500, viewHeight: 300);
+>>>>>>> 84a1e904f44f9b0e9c4510138010edcc653163f8
     await tester.pumpWidget(
       _buildWidget(
         scaffoldKey,
@@ -201,8 +205,13 @@ void main() {
 
   testWidgets('Safe Area test', (WidgetTester tester) async {
     final GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
+<<<<<<< HEAD
+    const double windowHeight = 300;
+    widgetSetup(tester, 500, windowHeight: windowHeight);
+=======
     const double viewHeight = 300;
     widgetSetup(tester, 500, viewHeight: viewHeight);
+>>>>>>> 84a1e904f44f9b0e9c4510138010edcc653163f8
     await tester.pumpWidget(
       MediaQuery(
         data: const MediaQueryData(padding: EdgeInsets.all(20.0)),
@@ -237,7 +246,11 @@ void main() {
     );
 
     // No Safe area padding at the bottom.
+<<<<<<< HEAD
+    expect(tester.getBottomRight(find.widgetWithText(NavigationDrawerDestination,'Label4')).dy, windowHeight);
+=======
     expect(tester.getBottomRight(find.widgetWithText(NavigationDrawerDestination,'Label4')).dy, viewHeight);
+>>>>>>> 84a1e904f44f9b0e9c4510138010edcc653163f8
    });
 
   testWidgets('Navigation drawer semantics', (WidgetTester tester) async {

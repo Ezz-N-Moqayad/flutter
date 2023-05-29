@@ -578,7 +578,11 @@ class _RailDestination extends StatelessWidget {
     );
 
     final bool material3 = Theme.of(context).useMaterial3;
+<<<<<<< HEAD
+    final EdgeInsets destionationPadding = (padding ?? EdgeInsets.zero).resolve(Directionality.of(context));
+=======
     final EdgeInsets destinationPadding = (padding ?? EdgeInsets.zero).resolve(Directionality.of(context));
+>>>>>>> 84a1e904f44f9b0e9c4510138010edcc653163f8
     Offset indicatorOffset;
 
     final Widget themedIcon = IconTheme(
@@ -597,8 +601,13 @@ class _RailDestination extends StatelessWidget {
         // Split the destination spacing across the top and bottom to keep the icon centered.
         final Widget? spacing = material3 ? const SizedBox(height: _verticalDestinationSpacingM3 / 2) : null;
         indicatorOffset = Offset(
+<<<<<<< HEAD
+          minWidth / 2 + destionationPadding.left,
+          _verticalDestinationSpacingM3 / 2 + destionationPadding.top,
+=======
           minWidth / 2 + destinationPadding.left,
           _verticalDestinationSpacingM3 / 2 + destinationPadding.top,
+>>>>>>> 84a1e904f44f9b0e9c4510138010edcc653163f8
         );
         final Widget iconPart = Column(
           children: <Widget>[
@@ -674,8 +683,13 @@ class _RailDestination extends StatelessWidget {
         final Widget topSpacing = SizedBox(height: material3 ? 0 : verticalPadding);
         final Widget labelSpacing = SizedBox(height: material3 ? lerpDouble(0, _verticalIconLabelSpacingM3, appearingAnimationValue)! : 0);
         final Widget bottomSpacing = SizedBox(height: material3 ? _verticalDestinationSpacingM3 : verticalPadding);
+<<<<<<< HEAD
+        final double indicatorHorizontalPadding = (destionationPadding.left / 2) - (destionationPadding.right / 2);
+        final double indicatorVerticalPadding = destionationPadding.top;
+=======
         final double indicatorHorizontalPadding = (destinationPadding.left / 2) - (destinationPadding.right / 2);
         final double indicatorVerticalPadding = destinationPadding.top;
+>>>>>>> 84a1e904f44f9b0e9c4510138010edcc653163f8
         indicatorOffset = Offset(minWidth / 2 + indicatorHorizontalPadding, indicatorVerticalPadding);
         if (minWidth < _NavigationRailDefaultsM2(context).minWidth!) {
           indicatorOffset = Offset(minWidth / 2 + _horizontalDestinationSpacingM3, indicatorVerticalPadding);
@@ -721,8 +735,13 @@ class _RailDestination extends StatelessWidget {
         final Widget topSpacing = SizedBox(height: material3 ? 0 : _verticalDestinationPaddingWithLabel);
         final Widget labelSpacing = SizedBox(height: material3 ? _verticalIconLabelSpacingM3 : 0);
         final Widget bottomSpacing = SizedBox(height: material3 ? _verticalDestinationSpacingM3 : _verticalDestinationPaddingWithLabel);
+<<<<<<< HEAD
+        final double indicatorHorizontalPadding = (destionationPadding.left / 2) - (destionationPadding.right / 2);
+        final double indicatorVerticalPadding = destionationPadding.top;
+=======
         final double indicatorHorizontalPadding = (destinationPadding.left / 2) - (destinationPadding.right / 2);
         final double indicatorVerticalPadding = destinationPadding.top;
+>>>>>>> 84a1e904f44f9b0e9c4510138010edcc653163f8
         indicatorOffset = Offset(minWidth / 2 + indicatorHorizontalPadding, indicatorVerticalPadding);
         if (minWidth < _NavigationRailDefaultsM2(context).minWidth!) {
           indicatorOffset = Offset(minWidth / 2 + _horizontalDestinationSpacingM3, indicatorVerticalPadding);

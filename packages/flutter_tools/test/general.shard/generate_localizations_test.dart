@@ -2100,6 +2100,20 @@ import 'output-localization-file_en.dart' deferred as output-localization-file_e
         l10nDirectory.childFile(defaultTemplateArbFileName)
           .writeAsStringSync(pluralMessageWithUndefinedParts);
         try {
+<<<<<<< HEAD
+          LocalizationsGenerator(
+            fileSystem: fs,
+            inputPathString: defaultL10nPathString,
+            outputPathString: defaultL10nPathString,
+            templateArbFileName: defaultTemplateArbFileName,
+            outputFileString: defaultOutputFileString,
+            classNameString: defaultClassNameString,
+            logger: logger,
+          )
+            ..loadResources()
+            ..writeOutputFiles();
+          fail('expected L10nException');
+=======
         LocalizationsGenerator(
           fileSystem: fs,
           inputPathString: defaultL10nPathString,
@@ -2111,6 +2125,7 @@ import 'output-localization-file_en.dart' deferred as output-localization-file_e
         )
           ..loadResources()
           ..writeOutputFiles();
+>>>>>>> 84a1e904f44f9b0e9c4510138010edcc653163f8
         } on L10nException catch (error) {
           expect(error.message, contains('Found syntax errors.'));
           expect(logger.hadErrorOutput, isTrue);
